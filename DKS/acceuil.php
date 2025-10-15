@@ -22,6 +22,7 @@ if (!isset($_SESSION['user'])) {
         <nav>
             <?php if ($user): ?>
                 <a class="non_suligner" href="mon_compte.php">Mon compte</a>
+                <a class="non_suligner" href="./logout">deconnection</a>
             <?php endif; ?>
         </nav>
 
