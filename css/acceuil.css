@@ -1,0 +1,40 @@
+header{
+    background:rgb(40, 40, 139);
+}
+body{
+    font-family:Arial;
+    margin:0;
+    padding:0;
+    background:#f9f9f9;
+}
+.menu{
+    display:flex;
+    justify-content:
+    space-between;
+    align-items:center;
+    background:#ffffff;
+    height: 80px;
+}
+.card{
+    display:flex;
+    justify-content:
+    space-between;
+    align-items:center;
+    background:#333;
+    height: 400px;
+}
+div {
+    background-color: #333;
+}
+
+._espace{
+    margin-left: 5rem;
+}
+
+.espace_{
+    margin-right: 5rem;
+}
+
+.non_suligner{
+    text-decoration: none;
+}
