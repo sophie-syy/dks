@@ -1,0 +1,56 @@
+body {
+    background-image: url('/DKS/img/img1.jpg');
+    background-size: cover;          
+    background-repeat: no-repeat;    
+    background-position: center;
+
+    font-family: Arial;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+label {
+    display: block;
+    margin-top: .5rem;
+}
+
+input {
+    padding: .5rem;
+    width: 100%;
+}
+
+button {
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+}
+
+.error {
+    background-color: #ffe6e6;
+    padding: 1rem;
+    border: 1px solid #ffcccc;
+    margin-bottom: 1rem;
+}
+
+.success {
+    background-color: #e6ffea;
+    padding: 1rem;
+    border: 1px solid #cceacc;
+    margin-bottom: 1rem;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rectangle{
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 10px;
+}
+
+.en_ligne{
+    display: flex;
+}

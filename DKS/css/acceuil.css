@@ -13,7 +13,7 @@ body{
     space-between;
     align-items:center;
     background:#ffffff;
-    height: 100px;
+    height: 80px;
 }
 .card{
     display:flex;
@@ -25,4 +25,12 @@ body{
 }
 div {
     background-color: #333;
+}
+
+._espace{
+    margin-left: 5rem;
+}
+
+.espace_{
+    margin-right: 5rem;
 }

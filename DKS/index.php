@@ -53,70 +53,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="utf-8">
     <title>Connexion</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./global.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            font-family: Arial;
-            max-width: 700px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-        label {
-            display: block;
-            margin-top: .5rem;
-        }
-        input {
-            padding: .5rem;
-            width: 100%;
-        }
-        button {
-            margin-top: 1rem;
-            padding: .5rem 1rem;
-        }
-        .error {
-            background-color: #ffe6e6;
-            padding: 1rem;
-            border: 1px solid #ffcccc;
-            margin-bottom: 1rem;
-        }
-        .success {
-            background-color: #e6ffea;
-            padding: 1rem;
-            border: 1px solid #cceacc;
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 <body>
-    <h1>Connexion</h1>
-    
-    <!-- Message de succès après l'inscription -->
-    <?php if (isset($_GET['registered'])): ?>
-        <div class="success">Inscription réussie — connectez-vous.</div>
-    <?php endif; ?>
 
-    <!-- Affichage des erreurs -->
-    <?php if (!empty($errors)): ?>
-        <div class="error">
-            <ul>
-                <?php foreach($errors as $e): ?>
-                    <li><?php echo htmlspecialchars($e, ENT_QUOTES, 'UTF-8'); ?></li>
-                <?php endforeach; ?>
-            </ul>
+    <div class="center rectangle">
+        <div class="en_ligne">
+            <h1>Connexion</h1>
+            <img src="./img/logo.jpg" alt="image" width="80px">
         </div>
-    <?php endif; ?>
-
-    <!-- Formulaire de connexion -->
-    <form method="POST" action="index.php" autocomplete="off">
-        <label for="pseudo">Pseudo</label>
-        <input type="text" id="pseudo" name="pseudo" required>
         
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" required>
+        <!-- Message de succès après l'inscription -->
+        <?php if (isset($_GET['registered'])): ?>
+            <div class="success">Inscription réussie — connectez-vous.</div>
+        <?php endif; ?>
 
-        <button type="submit">Se connecter</button>
-    </form>
+        <!-- Affichage des erreurs -->
+        <?php if (!empty($errors)): ?>
+            <div class="error">
+                <ul>
+                    <?php foreach($errors as $e): ?>
+                        <li><?php echo htmlspecialchars($e, ENT_QUOTES, 'UTF-8'); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
 
-    <p>Pas encore inscrit ? <a href="register.php">Créer un compte</a></p>
+        <!-- Formulaire de connexion -->
+        <form method="POST" action="index.php" autocomplete="off">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" id="pseudo" name="pseudo" required>
+            
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <p>Pas encore inscrit ? <a href="register.php">Créer un compte</a></p>
+
+    </div>
+
 </body>
 </html>
