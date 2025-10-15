@@ -57,20 +57,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
-  <h1>Créer un compte</h1>
-  <?php if (!empty($errors)): ?>
-    <div style="background:#ffe6e6;padding:1rem;border:1px solid #ffcccc;">
-      <ul><?php foreach($errors as $e) echo '<li>'.htmlspecialchars($e).'</li>'; ?></ul>
-    </div>
-  <?php endif; ?>
-  <form method="post" action="register.php" autocomplete="off">
-    <label>Nom <input name="nom" required maxlength="100"></label>
-    <label>Prénom <input name="prenom" required maxlength="100"></label>
-    <label>Pseudo <input name="pseudo" required maxlength="50"></label>
-    <label>Email <input name="email" type="email" required maxlength="100"></label>
-    <label>Mot de passe <input name="password" type="password" required></label>
-    <button type="submit" style="margin-top:1rem;padding:.5rem 1rem;">S'inscrire</button>
-  </form>
-  <p>Déjà inscrit ? <a href="index.php">Se connecter</a></p>
+  <div class="rectangle">
+    <div class="en_ligne jus">
+            <h1>Créer un compte</h1>
+            <img class="_espace border" src="./img/logo.jpg" alt="image" width="80px" height="80px">
+        </div>
+    
+    <?php if (!empty($errors)): ?>
+      <div style="background:#ffe6e6;padding:1rem;border:1px solid #ffcccc;">
+        <ul><?php foreach($errors as $e) echo '<li>'.htmlspecialchars($e).'</li>'; ?></ul>
+      </div>
+    <?php endif; ?>
+    <form method="post" action="register.php" autocomplete="off">
+      <label  >Nom <input  name="nom" required maxlength="100"></label>
+      <label>Prénom <input  name="prenom" required maxlength="100"></label>
+      <label>Pseudo <input  name="pseudo" required maxlength="50"></label>
+      <label>Email <input  name="email" type="email" required maxlength="100"></label>
+      <label>Mot de passe <input  name="password" type="password" required></label>
+      <button class="bord" type="submit" >S'inscrire</button>
+    </form>
+    <p>Déjà inscrit ? <a href="index.php">Se connecter</a></p>
+  </div>
 </body>
 </html>

@@ -1,38 +1,60 @@
-:root {
-    --base-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    --base-font-size: 16px;
-}
+body{
+    background-image: url('./../img/img1.jpg');
+    background-size: cover;          
+    background-repeat: no-repeat;    
+    background-position: center;
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--base-font-family);
-    font-size: var(--base-font-size);
-    background: white;
-    color: #111;
+    font-family: 'Segoe UI', sans-serif;
+    max-width:700px;
+    margin:2rem auto;
+    padding:1rem;
 }
 
 img { 
     max-width: 100%;
      height: auto; 
-    }
+}
+
 p { 
     line-height: 1.5;
      margin: 0 0 1rem 0; 
-    }
-body{
-    font-family:Arial;
-    max-width:700px;
-    margin:2rem auto;
-    padding:1rem;
 }
-label
-{
+
+label{
     display:block;
     margin-top:.5rem;
 }
-input
-{
+
+input{
     padding:.5rem;
     width:100%;
+}
+
+.rectangle{
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.bord {
+    border-radius: 10px;
+    border: none;
+    margin-top:1rem;
+    padding:.5rem 1rem;
+}
+
+.en_ligne{
+    display: flex;
+}
+
+.border{
+    border-radius: 10px;
+}
+
+._espace{
+    margin-left: 5rem;
+}
+
+.jus{
+    justify-content: space-between;
 }
