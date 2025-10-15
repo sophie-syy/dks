@@ -58,9 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
     <div class="rectangle">
-        <div class="en_ligne">
+        <div class="en_ligne jus">
             <h1>Connexion</h1>
-            <img src="./img/logo.jpg" alt="image" width="80px">
+            <img class="border" src="./img/logo.jpg" alt="image" width="80px">
         </div>
         
         <!-- Message de succès après l'inscription -->
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Se connecter</button>
+            <button class="bord" type="submit">Se connecter</button>
         </form>
 
         <p>Pas encore inscrit ? <a href="register.php">Créer un compte</a></p>

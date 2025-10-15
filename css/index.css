@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;    
     background-position: center;
 
-    font-family: Arial;
+    font-family: 'Segoe UI', sans-serif;
     max-width: 700px;
     margin: 2rem auto;
     padding: 1rem;
@@ -23,9 +23,11 @@ input {
     width: 100%;
 }
 
-button {
-    margin-top: 1rem;
-    padding: .5rem 1rem;
+.bord {
+    border-radius: 10px;
+    border: none;
+    margin-top:1rem;
+    padding:.5rem 1rem;
 }
 
 .error {
@@ -42,6 +44,9 @@ button {
     margin-bottom: 1rem;
 }
 
+.border{
+    border-radius: 10px;
+}
 
 .rectangle{
     background-color: rgba(255, 255, 255, 0.644);
@@ -51,4 +56,16 @@ button {
 
 .en_ligne{
     display: flex;
+}
+
+._espace{
+    margin-left: 5rem;
+}
+
+.espace_{
+    margin-right: 5rem;
+}
+
+.jus{
+    justify-content: space-between;
 }

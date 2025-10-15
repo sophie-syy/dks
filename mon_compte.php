@@ -72,6 +72,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     <link rel="stylesheet" href="./css/mon_compte.css">
 </head>
 <body>
+    <div class="menu">
+            <div class="en_ligne">
+                <img src="./img/logo.jpg" alt="image" width="80px">
+                <div class="logo">Data Keep Safe</div>
+            </div>
+            <div>
+                <a class="non_suligner _espace" href="./acceuil.php">Acceuil</a>
+                <a class="non_suligner _espace" href="./gestionmdp.php">Jeux</a>
+                <a class="non_suligner _espace" href="./data.php">Met fichier</a>
+                <a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a>
+                <a class="non_suligner _espace" href="./gestionmdp.php">Don</a>
+                <a class="non_suligner _espace espace_" href="./gestionmdp.php">Formation</a>
+            </div>
+
+            <li class="dropdown espace_">
+                <a class="non_suligner" href="./">&#9776;</a>
+                <ul class="submenu">
+                <?php if ($user): ?>
+                    <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
+                    <li><a class="non_suligner _espace" href="./logout">Deconnection</a></li>
+                <?php endif; ?>
+                </ul>
+            </li>
+        </div> 
+        <nav class="barre"></nav>
+        
     <header>
         <div>
             <h1>Mon compte : <?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?></h1>
