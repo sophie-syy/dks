@@ -4,7 +4,7 @@ session_start();
 $user = isset($_SESSION['user']) && is_array($_SESSION['user']) ? $_SESSION['user'] : null;
 
 if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 ?>
@@ -28,17 +28,16 @@ if (!isset($_SESSION['user'])) {
     </header>
 
     <nav>
-        <?php if ($user): ?>
-        <a href="mon_compte.php">Mon compte</a>
-        <?php endif; ?>
+        <a href="./mon_compte.php">Mon compte</a>
     </nav>
 
     <div class="menu">
-        <a href="./gestionmdp.php">Jeux</a>
+        <a href="./abonnement.php">abonnement</a>
         <a href="./data.php">Met fichier</a>
         <a href="./gestionmdp.php">Gestion de mot de passe</a>
         <a href="./gestionmdp.php">Don</a>
         <a href="./gestionmdp.php">Formation</a>
+        <a href="./logout.php">deconection</a>
     </div>
 
     <div class="card">
