@@ -32,7 +32,7 @@ if (!isset($_SESSION['user'])) {
             </div>
 
             <li class="dropdown espace_">
-                <a class="non_suligner" href="./">&#9776;</a>
+                <a class="non_suligner" href="./acceuil.php">&#9776;</a>
                 <ul class="submenu">
                 <?php if ($user): ?>
                     <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img-pub/images.jpeg" alt="PUB">
                 </a>
             </div>
-            <div>
+            <div class="_espace">
                 <h1>Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['pseudo']); ?>!</h1>
             </div> 
         </div>

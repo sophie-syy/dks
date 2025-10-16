@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
             </div>
 
             <li class="dropdown espace_">
-                <a class="non_suligner" href="./">&#9776;</a>
+                <a class="non_suligner" href="./mon_compte.php">&#9776;</a>
                 <ul class="submenu">
                 <?php if ($user): ?>
                     <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>

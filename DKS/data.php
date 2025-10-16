@@ -70,7 +70,7 @@ if (file_exists('database/' . $user['pseudo'])) {
             </div>
 
             <li class="dropdown espace_">
-                <a class="non_suligner" href="./">&#9776;</a>
+                <a class="non_suligner" href="./data.php">&#9776;</a>
                 <ul class="submenu">
                 <?php if ($user): ?>
                     <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
@@ -81,30 +81,30 @@ if (file_exists('database/' . $user['pseudo'])) {
         </div> 
         <nav class="barre"></nav>
 
+        <div class="_espace">        
+            <h1>Bienvenue, <?= htmlspecialchars($user['nom']) ?> !</h1>
+            <p>Voici votre espace de gestion de fichiers.</p>
 
-        <h1>Bienvenue, <?= htmlspecialchars($user['nom']) ?> !</h1>
-        <p>Voici votre espace de gestion de fichiers.</p>
+            <h2>Importer un fichier</h2>
+            <form method="post" enctype="multipart/form-data">
+                <label for="fichier">Choisir un fichier à importer :</label>
+                <input type="file" name="fichier" id="fichier" required>
+                <button type="submit">Importer</button>
+            </form>
 
-        <h2>Importer un fichier</h2>
-        <form method="post" enctype="multipart/form-data">
-            <label for="fichier">Choisir un fichier à importer :</label>
-            <input type="file" name="fichier" id="fichier" required>
-            <button type="submit">Importer</button>
-        </form>
-
-        <h2>Vos fichiers</h2>
-        <?php if (count($uploadedFiles) > 0): ?>
-            <ul>
-                <?php foreach ($uploadedFiles as $file): ?>
-                    <li>
-                        <a href="<?= 'database/' . $user['pseudo'] . '/' . $file ?>" target="_blank"><?= htmlspecialchars($file) ?></a>
-                        <a href="delete.php?file=<?= urlencode($file) ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce fichier ?')">Supprimer</a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else: ?>
-            <p>Aucun fichier téléchargé pour le moment.</p>
-        <?php endif; ?>
-
+            <h2>Vos fichiers</h2>
+            <?php if (count($uploadedFiles) > 0): ?>
+                <ul>
+                    <?php foreach ($uploadedFiles as $file): ?>
+                        <li>
+                            <a class="non_suligner" href="<?= 'database/' . $user['pseudo'] . '/' . $file ?>" target="_blank"><?= htmlspecialchars($file) ?></a>
+                            <a  href="delete.php?file=<?= urlencode($file) ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce fichier ?')">Supprimer</a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>Aucun fichier téléchargé pour le moment.</p>
+            <?php endif; ?>
+        </div>    
     </body>
 </html>

@@ -50,7 +50,7 @@ $passwords = $stmt->fetchAll();
         </div>
 
         <li class="dropdown espace_">
-            <a class="non_suligner" href="./">&#9776;</a>
+            <a class="non_suligner" href="./gestionmdp.php">&#9776;</a>
             <ul class="submenu">
             <?php if ($user): ?>
                 <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
@@ -61,38 +61,39 @@ $passwords = $stmt->fetchAll();
     </div> 
     <nav class="barre"></nav>
 
-    <header>
-        <h1>DKS - Gestionnaire de Mots de Passe</h1>
-    </header>
+    <div class="_espace">
+        <header>
+            <h1>DKS - Gestionnaire de Mots de Passe</h1>
+        </header>
 
-    <main>
-        <h2>Ajouter un mot de passe</h2>
-        <form method="POST">
-            <input type="text" name="website" placeholder="Nom du site web" required>
-            <input type="text" name="username" placeholder="Pseudo" required>
-            <button type="submit">Générer et Ajouter</button>
-        </form>
+        <main>
+            <h2>Ajouter un mot de passe</h2>
+            <form method="POST">
+                <input type="text" name="website" placeholder="Nom du site web" required>
+                <input type="text" name="username" placeholder="Pseudo" required>
+                <button type="submit">Générer et Ajouter</button>
+            </form>
 
-        <h2>Tableau des Mots de Passe</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Site Web</th>
-                    <th>Pseudo</th>
-                    <th>Mot de Passe</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($passwords as $password): ?>
+            <h2>Tableau des Mots de Passe</h2>
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo htmlspecialchars($password['website']); ?></td>
-                        <td><?php echo htmlspecialchars($password['username']); ?></td>
-                        <td><?php echo htmlspecialchars($password['password']); ?></td>
+                        <th>Site Web</th>
+                        <th>Pseudo</th>
+                        <th>Mot de Passe</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </main>
-
+                </thead>
+                <tbody>
+                    <?php foreach ($passwords as $password): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($password['website']); ?></td>
+                            <td><?php echo htmlspecialchars($password['username']); ?></td>
+                            <td><?php echo htmlspecialchars($password['password']); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </main>
+    </div>                    
     </body>
 </html>
