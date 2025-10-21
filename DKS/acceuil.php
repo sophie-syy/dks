@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
                 <a class="non_suligner _espace" href="./abonnement.php">abonnement</a>
                 <a class="non_suligner _espace" href="./data.php">Met fichier</a>
                 <a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a>
-                <a class="non_suligner _espace" href="./gestionmdp.php">Don</a>
+                <a class="non_suligner _espace" href="./don.php">Don</a>
                 <a class="non_suligner _espace espace_" href="./gestionmdp.php">Formation</a>
             </div>
 
