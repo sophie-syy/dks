@@ -31,3 +31,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`) -- Email unique
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- Table abonnements
+DROP TABLE IF EXISTS `abonnements`;
+CREATE TABLE IF NOT EXISTS `abonnements` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `plan_name` varchar(255) NOT NULL,
+  `storage_size` int NOT NULL,  -- Taille en Go
+  `price` decimal(10, 2) NOT NULL,  -- Prix en €
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -18,13 +18,15 @@ if (isset($_GET['file'])) {
     $filePath = $uploadDir . $file;
 
     if (file_exists($filePath)) {
-        unlink($filePath);
-        header("Location: data.php");  // Redirige après suppression
+        // Envoie le fichier au navigateur
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . basename($filePath) . '"');
+        readfile($filePath);
         exit;
     } else {
         echo "Fichier introuvable.";
     }
 } else {
-    echo "Aucun fichier spécifié pour suppression.";
+    echo "Aucun fichier spécifié.";
 }
 ?>
