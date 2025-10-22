@@ -1,4 +1,4 @@
-<h1>Page de don</h1><?php
+<?php
 require_once 'db.php';
 session_start();
 $user = isset($_SESSION['user']) && is_array($_SESSION['user']) ? $_SESSION['user'] : null;
