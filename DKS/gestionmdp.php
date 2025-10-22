@@ -58,29 +58,44 @@ $passwords = $stmt->fetchAll();
 <body>
     <div class="menu">
         <div class="en_ligne">
-            <img src="./img/logo.jpg" alt="image" width="80px">
-            <div class="logo">Data Keep Safe</div>
-        </div>
-            <div>
-                <a class="non_suligner _espace" href="./acceuil.php">Acceuil</a>
-                <a class="non_suligner _espace" href="./abonnement.php">abonnement</a>
+                <img src="./img/logo.jpg" alt="image" width="80">
+                <div class="logo">Data Keep Safe</div>
+            </div>
+            <div class="menu1">
+                <a class="non_suligner _espace" href="./acceuil.php">Accueil</a>
+                <a class="non_suligner _espace" href="./abonnement.php">Abonnement</a>
                 <a class="non_suligner _espace" href="./data.php">Met fichier</a>
                 <a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a>
                 <a class="non_suligner _espace" href="./don.php">Don</a>
-                <a class="non_suligner _espace espace_" href="./gestionmdp.php">Formation</a>
+                <a class="non_suligner _espace espace_" href="./formation.php">Formation</a>
             </div>
+            <div class="menu1 dropdown espace_">
+                <a class="non_suligner" href="./acceuil.php">&#9776;</a>
+                <ul class="submenu">
+                <?php if ($user): ?>
+                    <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
+                    <li><a class="non_suligner _espace" href="./logout">Déconnexion</a></li>
+                <?php endif; ?>
+                </ul>
+                </div>
 
-        <li class="dropdown espace_">
-            <a class="non_suligner" href="./gestionmdp.php">&#9776;</a>
-            <ul class="submenu">
-            <?php if ($user): ?>
-                <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
-                <li><a class="non_suligner _espace" href="./logout">Deconnexion</a></li>
-            <?php endif; ?>
-            </ul>
-        </li>
-    </div> 
-    <nav class="barre"></nav>
+                <div class="menu2 dropdown espace_">
+                    <a class="non_suligner" href="./acceuil.php">&#9776;</a>
+                    <ul class="submenu">
+                    <?php if ($user): ?>
+                        <li><a class="non_suligner _espace" href="./acceuil.php">Accueil</a></li>
+                        <li><a class="non_suligner _espace" href="./abonnement.php">Abonnement</a></li>
+                        <li><a class="non_suligner _espace" href="./data.php">Met fichier</a></li>
+                        <li><a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a></li>
+                        <li><a class="non_suligner _espace" href="./don.php">Don</a></li>
+                        <li><a class="non_suligner _espace espace_" href="./formation.php">Formation</a></li>
+                        <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
+                        <li><a class="non_suligner _espace" href="./logout">Déconnexion</a></li>
+                    <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        <nav class="barre"></nav>
 
     <div class="_espace">
         <header>
@@ -152,6 +167,29 @@ $passwords = $stmt->fetchAll();
             <?php endif; ?>
 
         </main>
-    </div>                    
+    </div>              
+    
+    <script>
+            (function () {
+            var taille = 980; 
+            var menu = document.getElementById('menu');
+            var menu2 = document.getElementById('menu2');
+
+            function updateMenu() {
+                if (!menu || !menu2) return;
+                if (window.innerWidth > taille) {
+                menu.style.display = 'flex';
+                menu2.style.display = 'none';
+                } else {
+                menu.style.display = 'none';
+                menu2.style.display = 'flex';
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', updateMenu);
+            window.addEventListener('resize', updateMenu);
+            window.addEventListener('orientationchange', updateMenu);
+            })();
+    </script>
 </body>
 </html>

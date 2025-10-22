@@ -71,79 +71,113 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     <title>Mon compte</title>
     <link rel="stylesheet" href="./css/mon_compte.css">
 </head>
-<body>
-    <div class="menu">
+    <body>
+        <div class="menu">
             <div class="en_ligne">
-                <img src="./img/logo.jpg" alt="image" width="80px">
+                <img src="./img/logo.jpg" alt="image" width="80">
                 <div class="logo">Data Keep Safe</div>
             </div>
-            <div>
-                <a class="non_suligner _espace" href="./acceuil.php">Acceuil</a>
-                <a class="non_suligner _espace" href="./gestionmdp.php">Jeux</a>
+            <div class="menu1">
+                <a class="non_suligner _espace" href="./acceuil.php">Accueil</a>
+                <a class="non_suligner _espace" href="./abonnement.php">Abonnement</a>
                 <a class="non_suligner _espace" href="./data.php">Met fichier</a>
                 <a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a>
-                <a class="non_suligner _espace" href="./gestionmdp.php">Don</a>
-                <a class="non_suligner _espace espace_" href="./gestionmdp.php">Formation</a>
+                <a class="non_suligner _espace" href="./don.php">Don</a>
+                <a class="non_suligner _espace espace_" href="./formation.php">Formation</a>
             </div>
-
-            <li class="dropdown espace_">
-                <a class="non_suligner" href="./mon_compte.php">&#9776;</a>
+            <div class="menu1 dropdown espace_">
+                <a class="non_suligner" href="./acceuil.php">&#9776;</a>
                 <ul class="submenu">
                 <?php if ($user): ?>
                     <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
-                    <li><a class="non_suligner _espace" href="./logout">Deconnection</a></li>
+                    <li><a class="non_suligner _espace" href="./logout">Déconnexion</a></li>
                 <?php endif; ?>
                 </ul>
-            </li>
-        </div> 
+            </div>
+
+            <div class="menu2 dropdown espace_">
+                <a class="non_suligner" href="./acceuil.php">&#9776;</a>
+                <ul class="submenu">
+                <?php if ($user): ?>
+                    <li><a class="non_suligner _espace" href="./acceuil.php">Accueil</a></li>
+                    <li><a class="non_suligner _espace" href="./abonnement.php">Abonnement</a></li>
+                    <li><a class="non_suligner _espace" href="./data.php">Met fichier</a></li>
+                    <li><a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a></li>
+                    <li><a class="non_suligner _espace" href="./don.php">Don</a></li>
+                    <li><a class="non_suligner _espace espace_" href="./formation.php">Formation</a></li>
+                    <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
+                    <li><a class="non_suligner _espace" href="./logout">Déconnexion</a></li>
+                <?php endif; ?>
+                </ul>
+            </div>
+        </div>
         <nav class="barre"></nav>
         
-    <header>
-        <div>
-            <h1>Mon compte : <?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?></h1>
+        <header>
+            <div>
+                <h1>Mon compte : <?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?></h1>
+            </div>
+        </header>
+
+        <div class="card">
+            <h2>Mes informations</h2>
+
+            <!-- Affichage du pseudo et de l'email -->
+            <p><strong>Pseudo :</strong> <?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
+            <p><strong>Email :</strong> <?php echo htmlspecialchars($user['email'] ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
+
+            <!-- Formulaire pour modifier les informations -->
+            <h2>Modifier mes informations</h2>
+            
+            <?php if (isset($error)): ?>
+                <div class="error"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></div>
+            <?php endif; ?>
+
+            <?php if (isset($success)): ?>
+                <div class="success"><?php echo htmlspecialchars($success, ENT_QUOTES, 'UTF-8'); ?></div>
+            <?php endif; ?>
+
+            <form method="POST">
+                <label for="pseudo">Pseudo:</label>
+                <input type="text" id="pseudo" name="pseudo" value="<?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?>" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email'] ?? '', ENT_QUOTES, 'UTF-8'); ?>" required>
+
+                <label for="password">Nouveau mot de passe:</label>
+                <input type="password" id="password" name="password" placeholder="Laisser vide si pas de changement">
+
+                <button type="submit" name="update">Mettre à jour</button>
+            </form>
+
+            <!-- Formulaire pour supprimer le compte -->
+            <h2>Supprimer mon compte</h2>
+            <form method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.')">
+                <button type="submit" name="delete">Supprimer mon compte</button>
+            </form>
         </div>
-    </header>
-
-    <nav>
-        <a href="accueil.php">Retour à l'accueil</a>
-    </nav>
-
-    <div class="card">
-        <h2>Mes informations</h2>
-
-        <!-- Affichage du pseudo et de l'email -->
-        <p><strong>Pseudo :</strong> <?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
-        <p><strong>Email :</strong> <?php echo htmlspecialchars($user['email'] ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
-
-        <!-- Formulaire pour modifier les informations -->
-        <h2>Modifier mes informations</h2>
         
-        <?php if (isset($error)): ?>
-            <div class="error"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></div>
-        <?php endif; ?>
+        <script>
+            (function () {
+            var taille = 980; 
+            var menu = document.getElementById('menu');
+            var menu2 = document.getElementById('menu2');
 
-        <?php if (isset($success)): ?>
-            <div class="success"><?php echo htmlspecialchars($success, ENT_QUOTES, 'UTF-8'); ?></div>
-        <?php endif; ?>
+            function updateMenu() {
+                if (!menu || !menu2) return;
+                if (window.innerWidth > taille) {
+                menu.style.display = 'flex';
+                menu2.style.display = 'none';
+                } else {
+                menu.style.display = 'none';
+                menu2.style.display = 'flex';
+                }
+            }
 
-        <form method="POST">
-            <label for="pseudo">Pseudo:</label>
-            <input type="text" id="pseudo" name="pseudo" value="<?php echo htmlspecialchars($user['pseudo'] ?? '', ENT_QUOTES, 'UTF-8'); ?>" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email'] ?? '', ENT_QUOTES, 'UTF-8'); ?>" required>
-
-            <label for="password">Nouveau mot de passe:</label>
-            <input type="password" id="password" name="password" placeholder="Laisser vide si pas de changement">
-
-            <button type="submit" name="update">Mettre à jour</button>
-        </form>
-
-        <!-- Formulaire pour supprimer le compte -->
-        <h2>Supprimer mon compte</h2>
-        <form method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.')">
-            <button type="submit" name="delete">Supprimer mon compte</button>
-        </form>
-    </div>
-</body>
+            window.addEventListener('DOMContentLoaded', updateMenu);
+            window.addEventListener('resize', updateMenu);
+            window.addEventListener('orientationchange', updateMenu);
+            })();
+        </script>
+    </body>
 </html>

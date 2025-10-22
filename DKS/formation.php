@@ -1,22 +1,30 @@
 <?php
 require_once 'db.php';
 session_start();
-$user = isset($_SESSION['user']) && is_array($_SESSION['user']) ? $_SESSION['user'] : null;
 
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
-    exit;
+// Vérification si l'utilisateur est connecté
+if (!isset($_SESSION['user']) || empty($_SESSION['user']['pseudo'])) {
+    header("Location: index.php"); 
+    exit();
 }
+
+$user = $_SESSION['user'];
+$userId = $user['id'];
+$userPseudo = $user['pseudo'];
+$uploadDir = 'database/' . $userPseudo . '/';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="./css/acceuil.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation - DKS</title>
+    <link rel="stylesheet" href="./css/formation.css">
 </head>
-    <body>
-        <div class="menu">
+<body>
+    <div class="menu">
             <div class="en_ligne">
                 <img src="./img/logo.jpg" alt="image" width="80">
                 <div class="logo">Data Keep Safe</div>
@@ -57,32 +65,13 @@ if (!isset($_SESSION['user'])) {
         </div>
         <nav class="barre"></nav>
 
-        <div class="page-container">
-            <aside class="sidebar left">
-                <a href="./redirection_pub/index.php" target="_blank" rel="noopener noreferrer">
-                    <img src="./img-pub/images.jpeg" alt="PUB gauche" class="ad_img">
-                </a>
-                <a href="./redirection_pub/index.php" target="_blank" rel="noopener noreferrer">
-                    <img src="./img-pub/pub_mcdo.png" alt="PUB gauche 2" class="ad_img">
-                </a>
-            </aside>
+    <div class="_espace">
+        <header>
+                <h1>DKS - Formation</h1>
+        </header>
+    </div>
 
-            <main class="main">
-                <h1>Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['pseudo']); ?>!</h1>
-                <p>Voici la zone principale centrée entre les deux colonnes de publicité (255px chacune).</p>
-            </main>
-
-            <aside class="sidebar right">
-                <a href="./redirection_pub/index.php" target="_blank" rel="noopener noreferrer">
-                    <img src="./img-pub/images.jpeg" alt="PUB droite" class="ad_img">
-                </a>
-                <a href="./redirection_pub/index.php" target="_blank" rel="noopener noreferrer">
-                    <img src="./img-pub/pub_mcdo.png" alt="PUB droite 2" class="ad_img">
-                </a>
-            </aside>
-        </div>
-
-        <script>
+            <script>
             (function () {
             var taille = 980; 
             var menu = document.getElementById('menu');
@@ -104,5 +93,5 @@ if (!isset($_SESSION['user'])) {
             window.addEventListener('orientationchange', updateMenu);
             })();
         </script>
-    </body>
+</body>
 </html>

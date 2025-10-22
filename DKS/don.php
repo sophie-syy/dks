@@ -28,35 +28,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Faire un Don - Data Keep Safe</title>
-    <link rel="stylesheet" href="./css/acceuil.css">
+    <link rel="stylesheet" href="./css/don.css">
 </head>
 <body>
-    <header>
-        <div class="menu">
+    <div class="menu">
             <div class="en_ligne">
-                <img src="./img/logo.jpg" alt="logo" width="80px">
+                <img src="./img/logo.jpg" alt="image" width="80">
                 <div class="logo">Data Keep Safe</div>
             </div>
-            <div>
-                <a class="non_suligner _espace" href="./acceuil.php">Acceuil</a>
+            <div class="menu1">
+                <a class="non_suligner _espace" href="./acceuil.php">Accueil</a>
                 <a class="non_suligner _espace" href="./abonnement.php">Abonnement</a>
                 <a class="non_suligner _espace" href="./data.php">Met fichier</a>
                 <a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a>
                 <a class="non_suligner _espace" href="./don.php">Don</a>
-                <a class="non_suligner _espace espace_" href="./gestionmdp.php">Formation</a>
+                <a class="non_suligner _espace espace_" href="./formation.php">Formation</a>
             </div>
-
-            <li class="dropdown espace_">
+            <div class="menu1 dropdown espace_">
                 <a class="non_suligner" href="./acceuil.php">&#9776;</a>
                 <ul class="submenu">
                 <?php if ($user): ?>
                     <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
-                    <li><a class="non_suligner _espace" href="./logout">Deconnexion</a></li>
+                    <li><a class="non_suligner _espace" href="./logout">Déconnexion</a></li>
                 <?php endif; ?>
                 </ul>
-            </li>
-        </div> 
-    </header>
+            </div>
+
+            <div class="menu2 dropdown espace_">
+                <a class="non_suligner" href="./acceuil.php">&#9776;</a>
+                <ul class="submenu">
+                <?php if ($user): ?>
+                    <li><a class="non_suligner _espace" href="./acceuil.php">Accueil</a></li>
+                    <li><a class="non_suligner _espace" href="./abonnement.php">Abonnement</a></li>
+                    <li><a class="non_suligner _espace" href="./data.php">Met fichier</a></li>
+                    <li><a class="non_suligner _espace" href="./gestionmdp.php">Gestion de mot de passe</a></li>
+                    <li><a class="non_suligner _espace" href="./don.php">Don</a></li>
+                    <li><a class="non_suligner _espace espace_" href="./formation.php">Formation</a></li>
+                    <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
+                    <li><a class="non_suligner _espace" href="./logout">Déconnexion</a></li>
+                <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+        <nav class="barre"></nav>
 
     <div class="content">
         <div class="donation-form">
@@ -93,5 +107,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer>
         <p>&copy; 2025 Data Keep Safe. Tous droits réservés.</p>
     </footer>
+
+    <script>
+            (function () {
+            var taille = 980; 
+            var menu = document.getElementById('menu');
+            var menu2 = document.getElementById('menu2');
+
+            function updateMenu() {
+                if (!menu || !menu2) return;
+                if (window.innerWidth > taille) {
+                menu.style.display = 'flex';
+                menu2.style.display = 'none';
+                } else {
+                menu.style.display = 'none';
+                menu2.style.display = 'flex';
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', updateMenu);
+            window.addEventListener('resize', updateMenu);
+            window.addEventListener('orientationchange', updateMenu);
+            })();
+    </script>
 </body>
 </html>
