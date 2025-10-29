@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pseudo = trim($_POST['pseudo'] ?? '');
     $email = trim($_POST['email'] ?? '');  // Récupération de l'email
     $password = $_POST['password'] ?? '';
+    $password_confirm = $_POST['password_confirm'] ?? '';
 
     // Vérifications des champs
     if ($nom === '' || $prenom === '' || $pseudo === '' || $email === '' || $password === '') {
@@ -26,6 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {  // Vérification de l'email
         $errors[] = 'L\'email n\'est pas valide.';
+    }
+
+    if ($password !== $password_confirm) {
+        $errors[] = 'Les mots de passe ne correspondent pas.';
     }
 
     if (empty($errors)) {
@@ -74,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <label>Pseudo <input  name="pseudo" required maxlength="50"></label>
       <label>Email <input  name="email" type="email" required maxlength="100"></label>
       <label>Mot de passe <input  name="password" type="password" required></label>
+      <label>Confirmer le mot de passe <input  name="password_confirm" type="password" required></label>
       <button class="bord" type="submit" >S'inscrire</button>
     </form>
     <p>Déjà inscrit ? <a href="index.php">Se connecter</a></p>
