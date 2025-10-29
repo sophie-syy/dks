@@ -1,11 +1,11 @@
 <?php
-require_once 'db.php';
+require_once 'f_db.php';
 session_start();
 
 // Vérifie si l'utilisateur est déjà connecté
 if (isset($_SESSION['user']) && !empty($_SESSION['user']['pseudo'])) {
     // Si l'utilisateur est déjà connecté, on le redirige vers l'accueil
-    header("Location: acceuil.php");
+    header("Location: p_acceuil.php");
     exit();
 }
 
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
 
             // Rediriger vers l'accueil après une connexion réussie
-            header('Location: acceuil.php');
+            header('Location: p_acceuil.php');
             exit;
         } else {
             // Ajout d'un message d'erreur si les identifiants sont incorrects
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button class="bord" type="submit">Se connecter</button>
         </form>
 
-        <p>Pas encore inscrit ? <a href="register.php">Créer un compte</a></p>
+        <p>Pas encore inscrit ? <a href="p_register.php">Créer un compte</a></p>
 
     </div>
 
