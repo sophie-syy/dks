@@ -31,6 +31,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`) -- Email unique
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+INSERT INTO `users` (`id`, `nom`, `prenom`, `pseudo`, `email`, `password`, `created_at`) VALUES
+(7, 'su', 'sophie', 'sophie', 'susophie16@gmail.com', '$2y$10$gw90F9q9RynQVai06NrGm.HTZa5esDNKIxNUgw4Gae1oZyijlUoJ2', '2025-10-29 18:08:21');
+COMMIT;
+
 -- Table abonnements
 DROP TABLE IF EXISTS `abonnements`;
 CREATE TABLE IF NOT EXISTS `abonnements` (
