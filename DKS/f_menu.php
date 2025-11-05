@@ -1,7 +1,9 @@
 <div class="menu">
     <div class="en_ligne">
-        <img src="./img/logo.jpg" alt="image" width="80">
-        <div class="logo">Data Keep Safe</div>
+    <div class="logo">
+        <img style="margin-left: 0.5rem;" src="./img/logo.jpg" alt="image">
+    </div>
+        <div style="margin-left: 0.5rem;" class="logo1">Data Keep Safe</div>
     </div>
     <div class="menu1">
         <a class="non_suligner _espace" href="./p_acceuil.php">Accueil</a>
