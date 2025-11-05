@@ -3,15 +3,24 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: #6d86fd;
+    background: #c5cfff;
     color: rgb(48 48 48);
+}
+
+.logo img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  vertical-align: middle;
 }
 
 .menu{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#ffffff;
+    background:#95b7eb;
     height: 80px;
 }
 
@@ -63,7 +72,7 @@ body {
   list-style: none;
 }
 
-.logo {
+.logo1 {
   font-size: 1.5em;
   font-weight: bold;
   display: flex;
