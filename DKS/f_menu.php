@@ -11,7 +11,6 @@
         <a class="non_suligner _espace" href="./p_data.php">Met fichier</a>
         <a class="non_suligner _espace" href="./p_gestionmdp.php">Gestion de mot de passe</a>
         <a class="non_suligner _espace" href="./p_don.php">Don</a>
-        <a class="non_suligner _espace espace_" href="./p_formation.php">Formation</a>
     </div>
     <div class="menu1 dropdown espace_">
         <a class="non_suligner" href="./p_acceuil.php">&#9776;</a>
@@ -32,7 +31,7 @@
             <li><a class="non_suligner _espace" href="./p_data.php">Met fichier</a></li>
             <li><a class="non_suligner _espace" href="./p_gestionmdp.php">Gestion de mot de passe</a></li>
             <li><a class="non_suligner _espace" href="./p_don.php">Don</a></li>
-            <li><a class="non_suligner _espace espace_" href="./p_formation.php">Formation</a></li>                <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
+            <li><a class="non_suligner _espace" href="mon_compte.php">Mon compte</a></li>
             <li><a class="non_suligner _espace" href="./f_logout">Déconnexion</a></li>
         <?php endif; ?>
         </ul>
