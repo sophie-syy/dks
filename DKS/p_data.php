@@ -86,7 +86,7 @@ if (file_exists($uploadDir)) {
 include __DIR__ . "/f_pub.php";?> 
 
     <main class="main">
-        <h1>Bienvenue, <?= htmlspecialchars($user['nom']) ?> !</h1>
+        <h1>DKS - Gestionnaire des fichiers</h1>
         <p>Voici votre espace personnel de gestion de fichiers.</p>
 
         <h2>Importer un fichier</h2>
