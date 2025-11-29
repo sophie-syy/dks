@@ -24,10 +24,10 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img-pub/images.jpeg" alt="PUB gauche" class="ad_img">
                 </a>
                 <a href="./redirection_pub/index.php" target="_blank" rel="noopener noreferrer">
-                    <img src="./img-pub/pub_mcdo.png" alt="PUB gauche 2" class="ad_img">
+                    <img src="./img-pub/pub_parfum.png" alt="PUB gauche 2" class="ad_img">
                 </a>
             </aside>
-
+     
             <main class="main">
                 <h1>Bienvenue, <?php echo htmlspecialchars($_SESSION['user']['pseudo']); ?>!</h1>
                 <p>Voici la zone principale centrée entre les deux colonnes de publicité (255px chacune).</p>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['user'])) {
                     <img src="./img-pub/images.jpeg" alt="PUB droite" class="ad_img">
                 </a>
                 <a href="./redirection_pub/index.php" target="_blank" rel="noopener noreferrer">
-                    <img src="./img-pub/pub_mcdo.png" alt="PUB droite 2" class="ad_img">
+                    <img src="./img-pub/pub_parfum.png" alt="PUB droite 2" class="ad_img">
                 </a>
             </aside>
         </div>

@@ -3,8 +3,8 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background: #c5cfff;
-    color: rgb(48 48 48);
+    background: #e4e9f0;
+    color: #121212;
 }
 
 .logo img{
@@ -20,8 +20,9 @@ body {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#95b7eb;
+    background: #38434b;;
     height: 80px;
+    color: #ddd;
 }
 
 .menu1 {
@@ -41,7 +42,7 @@ body {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background: rgb(40, 40, 139);
+    background: #50585f;
     height: 20px;
 }
 
@@ -49,7 +50,7 @@ body {
     display:flex;
     justify-content: space-between;
     align-items:center;
-    background:#6d86fd;
+    background:#121212;
     height: 400px;
 }
 
@@ -63,7 +64,7 @@ body {
 
 .non_suligner{
     text-decoration: none;
-    color: rgb(48 48 48);
+    color: #fff;
 }
 
 .dropdown {
@@ -81,7 +82,7 @@ body {
 .submenu {
   display: none;
   position: absolute;
-  background: rgb(48 48 48);
+  background: #303030;
   color: white;
   list-style: none;
   padding: 0;
@@ -97,7 +98,7 @@ body {
   padding: 10px 18px;
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #121212;
 }
 
 .submenu li a:hover {
